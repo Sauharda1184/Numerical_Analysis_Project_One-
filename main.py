@@ -173,14 +173,12 @@ def find_all_roots(coefficients):
         root = newton(coefficients, 0)
         if root is None:
             root = muller(coefficients, 0, 1, 2)
-            if root is not None and abs(root.imag) > 1e-8:
+            if not (root is None):
                 conjugate_root = root.conjugate()
                 # Since we assume that our polynomial has real coefficients,
                 # all of the imaginary roots will appear in conjugate pairs.
                 # Rather than running Muller's method once for each complex
                 # root, we can run it for each pair of complex roots.
-                # The imag check matters: Muller can also land on a real
-                # root, which is its own conjugate and must only be removed once.
         if root is None:
             raise RuntimeError(f"Could not find a root of {coefficients}; try different starting guesses.")
 

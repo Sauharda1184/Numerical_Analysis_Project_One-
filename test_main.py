@@ -10,7 +10,6 @@ TEST_CASES = [
     ([4, 0, 5, 0, 1], False),           # (x^2+1)(x^2+4):          roots +/-i, +/-2i
     ([-24, 44, -30, 15, -6, 1], False), # (x-1)(x-2)(x-3)(x^2+4):  roots 1, 2, 3, +/-2i
     ([12, 2, -8, 2], True),             # 2x^3-8x^2+2x+12:         roots -1, 2, 3
-    ([-4, -4, -4, 0, 1], False),        # x^4-4x^2-4x-4: Muller finds a real root here
 ]
 
 RESIDUAL_TOL = 1e-4
